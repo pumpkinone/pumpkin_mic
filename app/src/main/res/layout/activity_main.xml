@@ -1,31 +1,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context=".MainActivity" >
+    android:layout_height="match_parent" tools:context=".MainActivity"
+    android:id="@+id/progress_bar">
 
 
 
         <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/accent_material_dark" />
+            android:textColor="@color/accent_material_dark"
+            android:id="@+id/textView" />
 
         <Button
-            android:id="@+id/start_button"
+            android:id="@+id/Mic_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:onClick="start"
-            android:text="@string/start" />
-
-        <Button
-            android:id="@+id/stop_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/start_button"
-            android:onClick="stop"
-            android:text="@string/stop" />
-
+            android:onClick="Mic"
+            android:text="Mic"
+            android:layout_alignTop="@+id/button3"
+            android:layout_toLeftOf="@+id/analogClock"
+            android:layout_toStartOf="@+id/analogClock" />
 
 
     <!-- view for AdMob Banner Ad -->
@@ -33,5 +27,32 @@
         android:layout_height="wrap_content" android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Play"
+        android:text="Play"
+        android:layout_marginTop="66dp"
+        android:layout_toRightOf="@+id/analogClock"
+        android:layout_toEndOf="@+id/analogClock"
+        android:layout_below="@+id/textView" />
+
+    <AnalogClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/analogClock"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="Stop"
+        android:text="Stop"
+        android:id="@+id/Stop_button"
+        android:layout_above="@+id/analogClock"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
